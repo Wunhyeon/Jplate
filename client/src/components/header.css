@@ -1,0 +1,23 @@
+.headerContainer{
+    display: grid;
+    grid-template-areas: 
+    "logo . . links";
+    justify-content: space-between;
+    align-items: center;
+
+  padding: 0.5em 1.5em;
+}
+
+.header__logo{
+    grid-area: logo;
+}
+
+.header__links{
+    grid-area: links;
+    padding-top: 3rem;
+}
+
+.header__links span{
+    align-items: center;
+    margin: 0 1rem;
+}
