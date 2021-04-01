@@ -61,7 +61,7 @@ const MyPage = (props) => {
                 />
               );
             case 2:
-              return <MyPageEditPassword />;
+              return <MyPageEditPassword email={userInfo.email} />;
             case 3:
               return <MyPageCoupon />;
             case 4:

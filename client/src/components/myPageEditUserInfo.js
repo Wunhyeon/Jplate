@@ -7,17 +7,26 @@ const MyPageEditUserInfo = ({ email, phone, name, setName, setContent }) => {
   };
 
   const handleSubmitEditName = () => {
-    axios.patch(
-      "http://localhost:5000/users/modifyname",
-      {
-        name,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+    axios
+      .patch(
+        "http://localhost:5000/users/modifyname",
+        {
+          name,
         },
-      }
-    );
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+        }
+      )
+      .then((result) => {
+        alert("이름이 수정되었습니다.");
+        window.location.reload();
+      })
+      .catch((err) => {
+        console.log("Err in update name : ", err);
+        alert("오류가 발생하여 이름을 수정하지 못했습니다");
+      });
   };
   return (
     <div className="myPageEditUserInfoContainer">
@@ -51,10 +60,7 @@ const MyPageEditUserInfo = ({ email, phone, name, setName, setContent }) => {
           />
         </div>
         <div className="submitContainer">
-          <button
-            onClick={handleSubmitEditName}
-            className="nameEditSubmitButton"
-          >
+          <button onClick={handleSubmitEditName} className="editSubmitButton">
             수정하기
           </button>
         </div>

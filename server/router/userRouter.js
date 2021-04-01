@@ -6,5 +6,9 @@ userRouter.post("/signup", controller.postUser.signup);
 userRouter.post("/signin", controller.postUser.signin);
 
 userRouter.get("/info", controller.getUser.getUserInfo);
+userRouter.get("/logout", controller.getUser.logout);
+
+userRouter.patch("/modifyname", controller.patchUser.modifyUserName);
+userRouter.patch("/modifypassword", controller.patchUser.modifyPassword);
 
 export { userRouter };

@@ -28,6 +28,12 @@
     font-size: 1.5rem;
 }
 
+.passwordInput{
+    margin: 0;
+    width: 15rem;
+    font-size: 1.5rem;
+}
+
 .userInfoContainer button{
     width: 15rem;
     height: 3rem;
@@ -42,11 +48,11 @@
     cursor: pointer;
 }
 
-.nameEditSubmitButton{
+.editSubmitButton{
     background-color: rgba(201, 64, 64, 0.795);
     border: none;
 }
 
-.nameEditSubmitButton:hover{
+.editSubmitButton:hover{
     cursor: pointer;
 }
