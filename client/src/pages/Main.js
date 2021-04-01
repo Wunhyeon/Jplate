@@ -1,4 +1,4 @@
-import react from "react";
+import react, { useEffect, useState } from "react";
 import Header from "../components/Header";
 
 const Main = () => {

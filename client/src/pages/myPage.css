@@ -1,0 +1,13 @@
+.myPageContainer{
+    height: 100vh;
+    width: 100vw;
+}
+
+.myPageContents{
+    padding: 1rem;
+}
+
+.myPageContents{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+}

@@ -1,0 +1,52 @@
+.myPageSidebarContainer{
+    height: 100%;
+}
+
+.myPageSidebarContents{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.myPageSidebarContents div{
+    font-weight: normal;
+    margin-bottom: 1rem;
+}
+
+.myPageSidebarContents div:hover{
+    cursor: pointer;
+}
+
+.userInfoContainer div{
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.nameContainer .nameInput{
+    margin: 0;
+    width: 15rem;
+    font-size: 1.5rem;
+}
+
+.userInfoContainer button{
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.3rem;
+}
+
+.modifyPassBtn{
+    background-color: white;
+}
+
+.modifyPassBtn:hover{
+    cursor: pointer;
+}
+
+.nameEditSubmitButton{
+    background-color: rgba(201, 64, 64, 0.795);
+    border: none;
+}
+
+.nameEditSubmitButton:hover{
+    cursor: pointer;
+}

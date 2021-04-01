@@ -59,7 +59,13 @@ const Signup = (props) => {
         <div className="signupForm">
           <label>
             <span>이메일</span>
-            <input type="text" name="email" id="email" onChange={handleEmail} />
+            <input
+              type="text"
+              name="email"
+              id="email"
+              onChange={handleEmail}
+              value={email}
+            />
           </label>
           <label>
             <span>비밀번호</span>
@@ -68,6 +74,7 @@ const Signup = (props) => {
               name="userPassword"
               id="userPassword"
               onChange={handlePassword}
+              value={password}
             />
           </label>
           <label>
@@ -77,15 +84,28 @@ const Signup = (props) => {
               name="passwordCheck"
               id="passwordCheck"
               onChange={handlePasswordCheck}
+              value={passwordCheck}
             />
           </label>
           <label>
             <span>이름</span>
-            <input type="text" name="name" id="name" onChange={handleName} />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              onChange={handleName}
+              value={name}
+            />
           </label>
           <label>
             <span>휴대폰 번호</span>
-            <input type="tel" name="phone" id="phone" onChange={handlePhone} />
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              onChange={handlePhone}
+              value={phone}
+            />
           </label>
           <button className="signupButton" onClick={submitSignup}>
             회원가입
