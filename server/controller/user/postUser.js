@@ -1,5 +1,6 @@
 import Users from "../../models/userModel";
 import { SHA256 } from "crypto-js";
+import { createToken } from "../../util/token/token";
 
 export const postUser = {
   signup: async (req, res) => {
@@ -36,5 +37,34 @@ export const postUser = {
   },
   signin: async (req, res) => {
     console.log("user signin : req.body : ", req.body);
+    const { email, password } = req.body;
+
+    const encryptPassword = SHA256(
+      password,
+      process.env.CRYPTO_PASSWORD
+    ).toString();
+
+    try {
+      let userInfo = await Users.findOne({
+        Email: email,
+        Password: encryptPassword,
+      });
+
+      if (userInfo) {
+        const { _id, Email, Name } = userInfo;
+        let tokenInfoObj = {
+          _id,
+          Email,
+          Name,
+          iat: Math.floor(Date.now() / 1000) + 60 * 60,
+        };
+        const accessToken = createToken(tokenInfoObj);
+        res.send({ accessToken, message: "ok" });
+      } else {
+        res.status(403).send({ message: "Invalid User" });
+      }
+    } catch (err) {
+      res.status(500).send("Server Error");
+    }
   },
 };

@@ -8,6 +8,7 @@ import Main from "./pages/Main";
 import Store from "./pages/Store";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import Mypage from "./pages/Mypage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/store" render={() => <Store />} />
           <Route path="/auth/signin" render={() => <Signin />} />
           <Route path="/auth/signup" render={() => <Signup />} />
+          <Route path="/account/edit" render={() => <Mypage />} />
         </Switch>
       </BrowserRouter>
     </div>

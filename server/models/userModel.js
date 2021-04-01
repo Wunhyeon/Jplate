@@ -31,6 +31,9 @@ const userSchema = new mongoose.Schema({
   Receipt: {
     type: String,
   },
+  // Like: {
+  //   type: Array,
+  // },
 });
 
 const Users = mongoose.model("Users", userSchema);
