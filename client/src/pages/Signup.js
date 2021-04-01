@@ -2,16 +2,17 @@ import react, { useState } from "react";
 import BigLogo from "../components/BigLogo";
 import "./signup.css";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 
-const Signup = () => {
-  const [userEmail, setUserEmail] = useState("");
+const Signup = (props) => {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
 
-  const handleUserEmail = (e) => {
-    setUserEmail(e.target.value);
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
   };
   const handlePassword = (e) => {
     setPassword(e.target.value);
@@ -27,13 +28,26 @@ const Signup = () => {
   };
 
   const submitSignup = () => {
-    alert(`${password}, ${passwordCheck}, ${name}, ${phone}`);
-    axios.post("http://localhost:5000", {
-      userEmail,
-      password,
-      name,
-      phone,
-    });
+    axios
+      .post("http://localhost:5000/users/signup", {
+        email,
+        password,
+        name,
+        phone,
+      })
+      .then((result) => {
+        console.log("Success Signup");
+        props.history.push("/auth/signin");
+      })
+      .catch((err) => {
+        console.log(err.response);
+        if (err.response.data.message === "Duplicate email") {
+          alert("중복된 이메일입니다.");
+        }
+        if (err.response.data.message === "Duplicate Phone") {
+          alert("중복된 핸드폰 번호입니다.");
+        }
+      });
   };
 
   return (
@@ -45,12 +59,7 @@ const Signup = () => {
         <div className="signupForm">
           <label>
             <span>이메일</span>
-            <input
-              type="text"
-              name="userEmail"
-              id="userEmail"
-              onChange={handleUserEmail}
-            />
+            <input type="text" name="email" id="email" onChange={handleEmail} />
           </label>
           <label>
             <span>비밀번호</span>
@@ -87,4 +96,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default withRouter(Signup);
