@@ -3,9 +3,29 @@ import "./header.css";
 import { Link } from "react-router-dom";
 import SmallLogo from "./SmallLogo";
 import "./common.css";
+import axios from "axios";
 
 const Header = () => {
   const [isLogin, setIsLogin] = useState(false);
+
+  const handleLogout = () => {
+    axios
+      .get("http://localhost:5000/users/logout", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      })
+      .then((result) => {
+        alert("로그아웃 되었습니다.");
+        setIsLogin(false);
+        localStorage.removeItem("accessToken");
+      })
+      .catch((err) => {
+        alert("로그아웃 되었습니다.");
+        setIsLogin(false);
+        localStorage.removeItem("accessToken");
+      });
+  };
 
   useEffect(() => {
     let accessToken = localStorage.getItem("accessToken");
@@ -30,7 +50,9 @@ const Header = () => {
                 <Link to="/account/edit">👤 내정보</Link>
               </span>
               <span>
-                <Link to="*">로그아웃</Link>
+                <span onClick={handleLogout} className="cursor_pointer">
+                  로그아웃
+                </span>
               </span>
             </>
           ) : (

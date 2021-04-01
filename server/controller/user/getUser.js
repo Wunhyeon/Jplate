@@ -38,4 +38,13 @@ export const getUser = {
       res.status(403).send({ message: "Invalid User" });
     }
   },
+  logout: async (req, res) => {
+    console.log("logout!");
+    let userToken = parseToken(req.headers.authorization);
+    if (userToken) {
+      res.send({ message: "ok" });
+    } else {
+      res.status(403).send({ message: "Invalid User" });
+    }
+  },
 };
