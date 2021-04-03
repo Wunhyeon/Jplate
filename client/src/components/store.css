@@ -1,0 +1,22 @@
+.category{
+    display: grid;
+    grid-template-columns: 1fr 11fr;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.categoryTitle{
+    font-weight: bold;
+}
+
+.categoryContents span{
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.categoryCheckbox{
+    margin: 0;
+    height: 1rem;
+    width: 1rem;
+}
+
