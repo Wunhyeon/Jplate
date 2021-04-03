@@ -1,0 +1,18 @@
+.mainContents{
+    padding: 1rem;
+}
+
+.designStoreCategoryContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.designStoreCategory{
+    border: solid black 1px;
+    height: 12rem;
+    width: 20rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+}

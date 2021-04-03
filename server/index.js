@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import { userRouter } from "./router/userRouter";
+import { templateRouter } from "./router/templateRouter";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
@@ -37,6 +38,7 @@ app.use(
 app.use(express.json());
 
 app.use("/users", userRouter);
+app.use("/templates", templateRouter);
 
 app.listen(PORT, () => {
   console.log(`Server Start! Listening on ${PORT}`);
