@@ -11,7 +11,7 @@ const Main = () => {
         <h1>주니어 백엔드 개발자 임재현입니다. 잘부탁드립니다 🙂</h1>
         <div className="designStoreCategoryContainer">
           {mockTemplate.map((el, i) => (
-            <Link to={`/store?category=${el.category}`}>
+            <Link to={`/store?category=${el.category}`} key={i}>
               <div className="designStoreCategory" key={i}>
                 {el.category}
               </div>

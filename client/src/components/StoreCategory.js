@@ -9,7 +9,12 @@ const StroeCategory = () => {
           <span className="categoryTitle">비율</span>
           <span className="categoryContents">
             <span>
-              <input type="checkbox" className="categoryCheckbox" value="all" />
+              <input
+                type="checkbox"
+                className="categoryCheckbox"
+                value="all"
+                checked={true}
+              />
               전체
             </span>
             {mockRatio.map((el, i) => (
@@ -28,7 +33,12 @@ const StroeCategory = () => {
           <span className="categoryTitle">카테고리</span>
           <span className="categoryContents">
             <span>
-              <input type="checkbox" className="categoryCheckbox" value="all" />
+              <input
+                type="checkbox"
+                className="categoryCheckbox"
+                value="all"
+                checked={true}
+              />
               전체
             </span>
             {mockCategory.map((el, i) => (
@@ -47,7 +57,12 @@ const StroeCategory = () => {
           <span className="categoryTitle">스타일</span>
           <span className="categoryContents">
             <span>
-              <input type="checkbox" className="categoryCheckbox" value="all" />
+              <input
+                type="checkbox"
+                className="categoryCheckbox"
+                value="all"
+                checked={true}
+              />
               전체
             </span>
             {mockStyle.map((el, i) => (

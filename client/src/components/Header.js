@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import SmallLogo from "./SmallLogo";
 import "./common.css";
 import axios from "axios";
+import { withRouter } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
   const [isLogin, setIsLogin] = useState(false);
 
   const handleLogout = () => {
@@ -19,6 +20,7 @@ const Header = () => {
         alert("로그아웃 되었습니다.");
         setIsLogin(false);
         localStorage.removeItem("accessToken");
+        props.history.push("/");
       })
       .catch((err) => {
         alert("로그아웃 되었습니다.");
@@ -64,4 +66,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

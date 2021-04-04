@@ -1,0 +1,51 @@
+.purchaseContents{
+    padding: 1rem;
+}
+
+.templateTitle{
+    font-size: 1.4rem;
+    /* font-weight: bold; */
+}
+
+.templatePrice{
+    font-weight: bold;
+}
+
+.purchaseConcrete{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-areas: '. cnt .';
+}
+
+.templatePictureContiner{
+    height: 15rem;
+    width: 25rem;
+    
+}
+
+.templatePicture{
+    width: 100%;
+    height: 100%;
+}
+
+.purchaseTemplateInfo{
+    grid-area: cnt;
+}
+
+.purchaseTemplateInfo div{
+    
+    margin: 0.5rem 0;
+}
+
+.templatePurchaseButton{
+    background-color: rgba(173, 38, 38, 0.877);
+    border: none;
+    height: 3rem;
+    width: 60%;
+    font-size: large;
+    color: white;
+}
+
+.templatePurchaseButton:hover{
+    cursor: pointer;
+}

@@ -1,35 +1,58 @@
-import react from "react";
+import react, { useState } from "react";
 import "./store.css";
+import StoreTemplateModal from "./StoreTemplateModal";
 
 const StoreTemplateThumb = ({
-  picture,
-  title,
-  ratio,
+  id,
+  thumbnailPicture,
+  sampleVideo,
   time,
   textLength,
   category,
   tag,
   pages,
   price,
+  title,
+  ratio,
+  description,
 }) => {
+  const [modalOn, setModalOn] = useState(false);
+
+  const handleModalOn = (e) => {
+    setModalOn(!modalOn);
+  };
   return (
-    <div className="templateThumbContainer">
-      <div className="pictureArea">사진영역</div>
-      <div className="descriptionArea">
-        <h3>${title}타이틀</h3>
-        <div className="priceArea">${price}</div>
-        <div className="concreteSetting">
-          비율,시간,글자수, 사진수, 동영상수
-          {/* <video src="./src/cut1.mp4" controls /> */}
-          <img src="https://jplate.s3.ap-northeast-2.amazonaws.com/sample1.png" />
-          <video
-            src="https://jplate.s3.ap-northeast-2.amazonaws.com/template_sample1.mp4"
-            controls
-          />
+    <>
+      <div className="templateThumbContainer" onClick={handleModalOn}>
+        <div className="pictureArea">
+          <img src={thumbnailPicture} className="thumbnailPicture" />
         </div>
-        <div className="category">카테고리</div>
+        <div className="descriptionArea">
+          <h3>{title}</h3>
+          <div className="priceArea">{price}원</div>
+          <div className="concreteSetting">
+            ❐ {ratio} ⏱ {time} 𝐓 {textLength} ✏ {pages}
+          </div>
+          <div className="tag">{tag}</div>
+        </div>
       </div>
-    </div>
+      {modalOn && (
+        <StoreTemplateModal
+          handleModalOn={handleModalOn}
+          sampleVideo={sampleVideo}
+          id={id}
+          time={time}
+          textLength={textLength}
+          category={category}
+          tag={tag}
+          pages={pages}
+          price={price}
+          title={title}
+          ratio={ratio}
+          description={description}
+        />
+      )}
+    </>
   );
 };
 
