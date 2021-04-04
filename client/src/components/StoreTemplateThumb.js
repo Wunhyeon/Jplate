@@ -31,7 +31,7 @@ const StoreTemplateThumb = ({
           <h3>{title}</h3>
           <div className="priceArea">{price}원</div>
           <div className="concreteSetting">
-            ❐ {ratio} ⏱ {time} 𝐓 {textLength} ✏ {pages}
+            ❐ {ratio} ⏱ {time} 𝐓 {textLength} 📄 {pages}
           </div>
           <div className="tag">{tag}</div>
         </div>

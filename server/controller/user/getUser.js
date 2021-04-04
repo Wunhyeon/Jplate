@@ -47,4 +47,22 @@ export const getUser = {
       res.status(403).send({ message: "Invalid User" });
     }
   },
+  getMyProject: async (req, res) => {
+    console.log("getMyProject");
+    let userToken = parseToken(req.headers.authorization);
+    if (userToken) {
+      try {
+        let myTemplates = await Users.findById(userToken._id, {
+          _id: 1,
+          Templates: 1,
+        });
+        console.log("myTemplates : ", myTemplates);
+        res.send({ message: "ok", myTemplates });
+      } catch (err) {
+        res.status(500).send({ message: "Server Error" });
+      }
+    } else {
+      res.status(403).send({ message: "Invalid User" });
+    }
+  },
 };

@@ -49,6 +49,9 @@ const Header = (props) => {
           {isLogin ? (
             <>
               <span>
+                <Link to="/project">나의 프로젝트</Link>
+              </span>
+              <span>
                 <Link to="/account/edit">👤 내정보</Link>
               </span>
               <span>

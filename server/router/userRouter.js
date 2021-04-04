@@ -7,6 +7,7 @@ userRouter.post("/signin", controller.postUser.signin);
 
 userRouter.get("/info", controller.getUser.getUserInfo);
 userRouter.get("/logout", controller.getUser.logout);
+userRouter.get("/getMyProject", controller.getUser.getMyProject);
 
 userRouter.patch("/modifyname", controller.patchUser.modifyUserName);
 userRouter.patch("/modifypassword", controller.patchUser.modifyPassword);
