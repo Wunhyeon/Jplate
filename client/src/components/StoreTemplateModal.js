@@ -52,7 +52,7 @@ const StoreTemplateModal = ({
             <h2>{title}</h2>
           </div>
           <div className="modalDescription_title_concreteSetting">
-            ❐ {ratio} ⏱ {time} 𝐓 {textLength} ✏ {pages}
+            ❐ {ratio} ⏱ {time} 𝐓 {textLength} 📄 {pages}
           </div>
           <div className="modalDescription_description">
             <div className="modal_category modalConcrete">
