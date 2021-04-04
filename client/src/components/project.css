@@ -1,26 +1,26 @@
-.projectThumbContainer{
+.projectContainer .projectThumbContainer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 1.5rem 0;
     border-bottom: solid rgba(216, 208, 208, 0.993) 1px;
 }
 
-.pictureArea{
+.projectContainer .pictureArea{
     width: 20rem;
     height: 12.5rem;
 }
 
-.thumbNailPicture{
+.projectContainer .thumbNailPicture{
     width: 100%;
     height: 90%;
 }
 
-.descriptionArea .titleArea{
+.projectContainer .descriptionArea .titleArea{
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.makeButton{
+.projectContainer .makeButton{
     border: none;
     background-color: rgb(216, 58, 58);
     width:15rem;
@@ -29,6 +29,6 @@
     color: white;
 }
 
-.makeButton:hover{
+.projectContainer .makeButton:hover{
     cursor: pointer;
 }
