@@ -9,6 +9,8 @@ import Store from "./pages/Store";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Mypage from "./pages/Mypage";
+import Purchase from "./pages/Purchase";
+import Project from "./pages/Project";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/auth/signin" render={() => <Signin />} />
           <Route path="/auth/signup" render={() => <Signup />} />
           <Route path="/account/edit" render={() => <Mypage />} />
+          <Route path="/purchase" render={() => <Purchase />} />
+          <Route path="/project" render={() => <Project />} />
         </Switch>
       </BrowserRouter>
     </div>
