@@ -11,6 +11,7 @@ import Signup from "./pages/Signup";
 import Mypage from "./pages/Mypage";
 import Purchase from "./pages/Purchase";
 import Project from "./pages/Project";
+import Edit from "./pages/Edit";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/account/edit" render={() => <Mypage />} />
           <Route path="/purchase" render={() => <Purchase />} />
           <Route path="/project" render={() => <Project />} />
+          <Route path="/app" render={() => <Edit />} />
         </Switch>
       </BrowserRouter>
     </div>
