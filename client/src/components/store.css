@@ -39,7 +39,7 @@
 }
 
 .StoreTemplateModal{
-    z-index: 2;
+    /* z-index: 2; */
     /* position: absolute; */
     /* height: 100vh;
     width: 100vw; */
@@ -101,3 +101,4 @@
 .buyDesignButton:hover{
     cursor: pointer;
 }
+

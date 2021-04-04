@@ -1,0 +1,73 @@
+.editContainer .editMusicContainer{
+    z-index: 2;
+    /* position: absolute; */
+    /* height: 100vh;
+    width: 100vw; */
+    background-color: rgba(177, 158, 158, 0.199);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    /* overflow: auto; */
+    padding: 5rem 30rem;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+    box-sizing: border-box;
+}
+
+.editContainer .editMusicContents{
+    box-sizing: border-box;
+    color: black;
+    position: fixed;
+    background-color: white;
+    width: 40%;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.editContainer .musicRadio{
+    width: 2rem;
+}
+
+.editContainer .musicDiv{
+    font-size: 2rem;
+}
+
+.editContainer .backgroundTitle{
+    font-size: 3rem;
+}
+
+.editContainer .musicSelectButton{
+    width: 15rem;
+    height: 3rem;
+    background-color: rgb(196, 72, 72);
+    border:none;
+    font-size: 2rem;
+}
+
+.editContainer .musicSelectButton:hover{
+    cursor: pointer;
+}
+
+.editContainer .sampleEditPictureContainer{
+ width: 15rem;
+}
+
+.editContainer .sampleEditPictureContainer:hover{
+    cursor: pointer;
+}
+
+.sampleEditPicture{
+    width: 100%;
+}
+
+.editContainer .editBigPictureContainer{
+    height: 70%;
+}
+
+.editContainer .editBigPicture{
+    width: 100%;
+    height: 28rem;
+}
