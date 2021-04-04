@@ -1,5 +1,6 @@
 import react from "react";
 import "./project.css";
+import { useHistory } from "react-router-dom";
 
 const ProjectThumb = ({
   id,
@@ -10,7 +11,10 @@ const ProjectThumb = ({
   textLength,
   pages,
 }) => {
-  console.log("ratio : ", ratio);
+  const history = useHistory();
+  const goToEdit = () => {
+    history.push(`/app?templateId=${id}`);
+  };
   return (
     <div className="projectThumbContainer">
       <div className="pictureArea">
@@ -23,7 +27,9 @@ const ProjectThumb = ({
         </div>
       </div>
       <div className="buttonArea">
-        <button className="makeButton">제작하기</button>
+        <button className="makeButton" onClick={goToEdit}>
+          제작하기
+        </button>
       </div>
     </div>
   );

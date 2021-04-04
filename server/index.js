@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import { userRouter } from "./router/userRouter";
 import { templateRouter } from "./router/templateRouter";
+import { editRouter } from "./router/editRouter";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
@@ -39,6 +40,7 @@ app.use(express.json());
 
 app.use("/users", userRouter);
 app.use("/templates", templateRouter);
+app.use("/edits", editRouter);
 
 app.listen(PORT, () => {
   console.log(`Server Start! Listening on ${PORT}`);
