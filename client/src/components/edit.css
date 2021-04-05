@@ -149,3 +149,10 @@
 .submitEditButton:hover{
     cursor: pointer;
 }
+
+.loadingGifContainer{
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    background-color: rgba(2, 2, 2, 0.678);
+}
