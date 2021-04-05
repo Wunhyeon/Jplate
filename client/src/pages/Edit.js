@@ -27,6 +27,7 @@ const Edit = () => {
     selectedVideo: [],
     selectedText: [],
     templateId: "",
+    selectedMusic: "",
   });
 
   const getTemplateInfo = async () => {
@@ -34,20 +35,21 @@ const Edit = () => {
     const url = new URL(window.location.href);
     console.log("url.search : ", url.search);
     let templateId = url.search.split("=")[1];
+    let temp = { ...editForm };
+    temp.templateId = templateId;
+    // console.log("temp : ", { ...temp });
+    setEditForm({ ...temp });
     axios
       .get(
         `http://localhost:5000/templates/getOneTemplate?templateId=${templateId}`
       )
       .then(async (result) => {
         console.log("$$$ : ", result);
+
         setTemplateInfo(result.data.oneTemplate);
         templateInfoVal = { ...result.data.oneTemplate };
         setSelectedPicture(result.data.oneTemplate.EditData.EditPicture[0]);
         setGotTemplateInfo(true);
-        let temp = { ...editForm };
-        temp.templateId = result.data.oneTemplate._id;
-        console.log("temp : ", { ...temp });
-        setEditForm({ ...temp });
         getVideoList();
       })
       .catch((err) => {
@@ -60,6 +62,10 @@ const Edit = () => {
     axios
       .get("http://localhost:5000/edits/getMusicList")
       .then((result) => {
+        let temp = { ...editForm };
+        temp.selectedMusic = result.data.musicList[0].URL;
+        setEditForm({ ...temp });
+
         setMusicList(result.data.musicList);
         setGotMusicList(true);
         setSelectedMusic(result.data.musicList[0].URL);
@@ -81,12 +87,14 @@ const Edit = () => {
         // console.log({ ...editForm });
         let temp = { ...editForm };
         console.log("&&&templateInfoVal : ", templateInfoVal);
-        templateInfoVal.EditData.EditPicture.forEach((el) => {
+        templateInfoVal.EditData.EditPicture.forEach((el, i) => {
           // setEditForm({
           //   ...editForm.selectedVideo.push[result.data.videoList[0].URL],
           // });
-          temp.selectedVideo.push(result.data.videoList[0].URL);
-          temp.selectedText.push("");
+          // temp.selectedVideo.push(result.data.videoList[0].URL);
+          // temp.selectedText.push("");
+          temp.selectedVideo[i] = result.data.videoList[0].URL;
+          temp.selectedText[i] = "";
         });
         temp.templateId = templateInfoVal._id;
         // console.log(temp);
@@ -105,6 +113,10 @@ const Edit = () => {
   const selectMusic = (e) => {
     console.log("select Music : ", e);
     setSelectedMusic(e);
+    let temp = { ...editForm };
+    temp.selectedMusic = e;
+    console.log("!@$@!$temp : ", temp);
+    setEditForm({ ...temp });
     setShowMusicListModal(false);
   };
 

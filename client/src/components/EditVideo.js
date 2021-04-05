@@ -11,6 +11,7 @@ const EditVideo = ({
   const handleEditVideo = (e) => {
     let temp = { ...editForm };
     temp.selectedVideo[templateOrder] = e.target.value;
+    console.log("templateOrder : ", templateOrder);
     console.log("tmp : ", temp);
     setEditForm({ ...temp });
   };
