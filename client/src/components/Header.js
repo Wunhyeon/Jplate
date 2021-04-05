@@ -11,7 +11,7 @@ const Header = (props) => {
 
   const handleLogout = () => {
     axios
-      .get("https://jplate-server.ga/users/logout", {
+      .get("https://laggard-server.ga/users/logout", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

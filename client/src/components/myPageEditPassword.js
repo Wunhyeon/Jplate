@@ -11,7 +11,7 @@ const MyPageEditPassword = ({ email }) => {
   const handleEditSubmit = () => {
     axios
       .patch(
-        "https://jplate-server.ga/users/modifypassword",
+        "https://laggard-server.ga/users/modifypassword",
         {
           password,
         },

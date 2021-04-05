@@ -5,6 +5,7 @@ export const postEdit = {
   makeVideo: async (req, res) => {
     console.log("makeVideo!!");
     console.log(req.body);
+    req.setTimeout(600000);
     let selectedVideoList = [...req.body.editForm.selectedVideo];
     let selectedText = [...req.body.editForm.selectedText];
     let { templateId } = req.body.editForm;
@@ -18,7 +19,7 @@ export const postEdit = {
       console.log("filePath : ", filePath);
       setTimeout(() => {
         res.download(filePath + "/finalOUTPUT.mp4");
-      }, 15000);
+      }, 35000);
       // res.download(filePath + "/finalOUTPUT.mp4");
     } catch (err) {
       console.log("err in makeVideo : ", err);
