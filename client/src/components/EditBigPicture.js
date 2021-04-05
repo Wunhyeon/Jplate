@@ -22,7 +22,7 @@ const EditBigPicture = ({
     setShowLoading(true);
     axios
       .post(
-        "https://jplate-server.ga/edits/makeVideo",
+        "https://laggard-server.ga/edits/makeVideo",
         {
           editForm,
         },

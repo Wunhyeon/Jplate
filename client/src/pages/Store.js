@@ -11,7 +11,7 @@ const Store = () => {
 
   const getAllTemplate = () => {
     axios
-      .get("https://jplate-server.ga/templates/getAllTemplate")
+      .get("https://laggard-server.ga/templates/getAllTemplate")
       .then((result) => {
         console.log("result : ", result);
         setTemplateList(result.data.templateList);

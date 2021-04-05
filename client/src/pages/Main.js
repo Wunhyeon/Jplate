@@ -26,12 +26,12 @@ const Main = () => {
 export default Main;
 
 const mockTemplate = [
-  { category: 1 },
-  { category: 2 },
-  { category: 3 },
-  { category: 4 },
-  { category: 5 },
-  { category: 6 },
-  { category: 7 },
-  { category: 8 },
+  { category: "카페 & 레스토랑" },
+  { category: "뷰티 & 패션" },
+  { category: "기업(IT)" },
+  { category: "예술" },
+  { category: "여행" },
+  { category: "이벤트" },
+  { category: "이커머스" },
+  { category: "전체" },
 ];

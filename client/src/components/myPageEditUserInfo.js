@@ -9,7 +9,7 @@ const MyPageEditUserInfo = ({ email, phone, name, setName, setContent }) => {
   const handleSubmitEditName = () => {
     axios
       .patch(
-        "https://jplate-server.ga/users/modifyname",
+        "https://laggard-server.ga/users/modifyname",
         {
           name,
         },

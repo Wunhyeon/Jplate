@@ -20,7 +20,7 @@ const Signin = (props) => {
   const handleSubmit = () => {
     axios
       .post(
-        "https://jplate-server.ga/users/signin",
+        "https://laggard-server.ga/users/signin",
         {
           email,
           password,

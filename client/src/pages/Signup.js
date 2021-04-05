@@ -29,7 +29,7 @@ const Signup = (props) => {
 
   const submitSignup = () => {
     axios
-      .post("https://jplate-server.ga/users/signup", {
+      .post("https://laggard-server.ga/users/signup", {
         email,
         password,
         name,
