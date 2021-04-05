@@ -26,7 +26,7 @@ const MyPage = (props) => {
   const getUserInfo = () => {
     console.log("getUserInfo");
     axios
-      .get("http://localhost:5000/users/info", {
+      .get("https://jplate-server.ga/users/info", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

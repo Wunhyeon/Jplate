@@ -41,7 +41,7 @@ const Edit = () => {
     setEditForm({ ...temp });
     axios
       .get(
-        `http://localhost:5000/templates/getOneTemplate?templateId=${templateId}`
+        `https://jplate-server.ga/templates/getOneTemplate?templateId=${templateId}`
       )
       .then(async (result) => {
         console.log("$$$ : ", result);
@@ -60,7 +60,7 @@ const Edit = () => {
 
   const getMusicList = () => {
     axios
-      .get("http://localhost:5000/edits/getMusicList")
+      .get("https://jplate-server.ga/edits/getMusicList")
       .then((result) => {
         let temp = { ...editForm };
         temp.selectedMusic = result.data.musicList[0].URL;
@@ -79,7 +79,7 @@ const Edit = () => {
   const getVideoList = () => {
     console.log("###getVideoList");
     axios
-      .get("http://localhost:5000/edits/getVideoList")
+      .get("https://jplate-server.ga/edits/getVideoList")
       .then((result) => {
         setVideoList(result.data.videoList);
         setGotVideoList(true);
