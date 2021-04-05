@@ -43,6 +43,8 @@ app.use("/users", userRouter);
 app.use("/templates", templateRouter);
 app.use("/edits", editRouter);
 
-app.listen(PORT, () => {
+let server = app.listen(PORT, () => {
   console.log(`Server Start! Listening on ${PORT}`);
 });
+
+server.timeout = 600 * 1000;
