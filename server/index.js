@@ -6,6 +6,8 @@ import { editRouter } from "./router/editRouter";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import timeout from "connect-timeout";
+
 dotenv.config();
 
 const app = express();
@@ -29,6 +31,7 @@ mongoose
     console.log("Err in DB Connection : ", err);
   });
 
+app.use(timeout("600s"));
 app.use(morgan("dev"));
 app.use(
   cors({
@@ -42,6 +45,11 @@ app.use(express.json());
 app.use("/users", userRouter);
 app.use("/templates", templateRouter);
 app.use("/edits", editRouter);
+app.use(haltOnTimedout);
+
+function haltOnTimedout(req, res, next) {
+  if (!req.timedout) next();
+}
 
 let server = app.listen(PORT, () => {
   console.log(`Server Start! Listening on ${PORT}`);
