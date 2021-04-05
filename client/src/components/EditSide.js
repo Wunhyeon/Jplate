@@ -13,6 +13,7 @@ const EditSide = ({ editPicture, setSelectedPicture, setTemplateOrder }) => {
             setTemplateOrder(i);
           }}
         >
+          {i + 1}
           <img src={el} className="sampleEditPicture" />
         </div>
       ))}
