@@ -14,7 +14,7 @@ const Purchase = (props) => {
     console.log("templateId : ", templateId);
     axios
       .get(
-        `https://laggard-server.ga/templates/getOneTemplate?templateId=${templateId}`
+        `http://localhost:5000/templates/getOneTemplate?templateId=${templateId}`
       )
       .then((result) => {
         console.log("result : ", result);
@@ -30,7 +30,7 @@ const Purchase = (props) => {
   const purchaseTemplate = () => {
     axios
       .post(
-        "https://laggard-server.ga/templates/purchaseTemplate",
+        "http://localhost:5000/templates/purchaseTemplate",
         {
           template: templateInfo,
         },

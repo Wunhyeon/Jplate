@@ -9,7 +9,7 @@ const MyPageEditUserInfo = ({ email, phone, name, setName, setContent }) => {
   const handleSubmitEditName = () => {
     axios
       .patch(
-        "https://laggard-server.ga/users/modifyname",
+        "http://localhost:5000/users/modifyname",
         {
           name,
         },

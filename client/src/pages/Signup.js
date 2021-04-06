@@ -29,7 +29,7 @@ const Signup = (props) => {
 
   const submitSignup = () => {
     axios
-      .post("https://laggard-server.ga/users/signup", {
+      .post("http://localhost:5000/users/signup", {
         email,
         password,
         name,

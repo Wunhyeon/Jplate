@@ -11,7 +11,7 @@ const MyPageEditPassword = ({ email }) => {
   const handleEditSubmit = () => {
     axios
       .patch(
-        "https://laggard-server.ga/users/modifypassword",
+        "http://localhost:5000/users/modifypassword",
         {
           password,
         },
