@@ -10,7 +10,7 @@ const Project = () => {
 
   const getMyProject = () => {
     axios
-      .get("http://localhost:5000/users/getMyProject", {
+      .get("https://jplate-server.ga/users/getMyProject", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

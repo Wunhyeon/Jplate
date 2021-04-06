@@ -11,7 +11,7 @@ const MyPageEditPassword = ({ email }) => {
   const handleEditSubmit = () => {
     axios
       .patch(
-        "http://localhost:5000/users/modifypassword",
+        "https://jplate-server.ga/users/modifypassword",
         {
           password,
         },
