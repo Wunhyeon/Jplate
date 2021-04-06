@@ -5,7 +5,7 @@ export const postEdit = {
   makeVideo: async (req, res) => {
     console.log("makeVideo!!");
     console.log(req.body);
-    req.setTimeout(600000,function(){
+    req.setTimeout(600000, async () => {
       let selectedVideoList = [...req.body.editForm.selectedVideo];
       let selectedText = [...req.body.editForm.selectedText];
       let { templateId } = req.body.editForm;
@@ -25,8 +25,6 @@ export const postEdit = {
         console.log("err in makeVideo : ", err);
         res.status(500).send("server Error");
       }
-
     });
-    
   },
 };
