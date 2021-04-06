@@ -10,7 +10,7 @@ const Project = () => {
 
   const getMyProject = () => {
     axios
-      .get("https://laggard-server.ga/users/getMyProject", {
+      .get("http://localhost:5000/users/getMyProject", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },

@@ -22,7 +22,7 @@ const EditBigPicture = ({
     setShowLoading(true);
     axios
       .post(
-        "https://laggard-server.ga/edits/makeVideo",
+        "http://localhost:5000/edits/makeVideo",
         {
           editForm,
         },

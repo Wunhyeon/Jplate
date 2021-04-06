@@ -11,7 +11,7 @@ const Header = (props) => {
 
   const handleLogout = () => {
     axios
-      .get("https://laggard-server.ga/users/logout", {
+      .get("http://localhost:5000/users/logout", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
