@@ -22,7 +22,7 @@ const EditBigPicture = ({
     setShowLoading(true);
     axios
       .post(
-        "http://localhost:5000/edits/makeVideo",
+        "http://192.168.0.10:5000/edits/makeVideo",
         {
           editForm,
         },

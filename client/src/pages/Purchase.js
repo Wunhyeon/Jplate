@@ -14,7 +14,7 @@ const Purchase = (props) => {
     console.log("templateId : ", templateId);
     axios
       .get(
-        `http://localhost:5000/templates/getOneTemplate?templateId=${templateId}`
+        `https://jplate-server.ga/templates/getOneTemplate?templateId=${templateId}`
       )
       .then((result) => {
         console.log("result : ", result);
@@ -30,7 +30,7 @@ const Purchase = (props) => {
   const purchaseTemplate = () => {
     axios
       .post(
-        "http://localhost:5000/templates/purchaseTemplate",
+        "https://jplate-server.ga/templates/purchaseTemplate",
         {
           template: templateInfo,
         },

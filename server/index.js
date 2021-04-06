@@ -45,6 +45,9 @@ app.use(haltOnTimedout);
 app.use("/users", userRouter);
 app.use("/templates", templateRouter);
 app.use("/edits", editRouter);
+app.get("/", (req, res) => {
+  res.send("Hello Jplate");
+});
 
 function haltOnTimedout(req, res, next) {
   if (!req.timedout) next();
