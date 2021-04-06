@@ -47,7 +47,7 @@ app.use("/templates", templateRouter);
 app.use("/edits", editRouter);
 
 function haltOnTimedout(req, res, next) {
-  if (req.timedout) next();
+  if (!req.timedout) next();
 }
 
 let server = app.listen(PORT, () => {
