@@ -41,11 +41,10 @@ app.use(
   })
 );
 app.use(express.json());
-
+app.use(haltOnTimedout);
 app.use("/users", userRouter);
 app.use("/templates", templateRouter);
 app.use("/edits", editRouter);
-app.use(haltOnTimedout);
 
 function haltOnTimedout(req, res, next) {
   if (!req.timedout) next();
